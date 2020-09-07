@@ -1,8 +1,6 @@
 simdjson
 =====
 
-An OTP library
-
 This is an erlang bindings from [simdjson](https://github.com/simdjson/simdjson)
 
 Build
