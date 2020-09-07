@@ -2,8 +2,16 @@
 -export([decode/1, lazy_decode/1, at/2, erase/1, erase_all/0]).
 -on_load(init/0).
 
+-define(LIBNAME, simdjson).
+
 init() ->
-        ok = erlang:load_nif("./simdjson_nif", 0). 
+        SoName = case filelib:is_dir(filename:join(["..", priv])) of
+    	        true ->
+    		        filename:join(["..", priv, ?LIBNAME]);
+                _ ->
+                        filename:join([priv, ?LIBNAME])
+        end,
+        erlang:load_nif(SoName, 0).
 
 decode(_X) ->
         exit(nif_library_not_load).
