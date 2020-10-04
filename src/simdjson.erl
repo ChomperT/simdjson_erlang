@@ -2,7 +2,7 @@
 -export([decode/1, lazy_decode/1, at/2, erase/1, erase_all/0]).
 -on_load(init/0).
 
--define(LIBNAME, simdjson).
+-define(LIBNAME, simdjson_erlang).
 
 init() ->
     SoName = case code:priv_dir(?LIBNAME) of

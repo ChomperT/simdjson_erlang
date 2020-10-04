@@ -2,6 +2,7 @@
 #include <string.h>
 #include <erl_nif.h>
 #include <vector>
+#include <unordered_map>
 
 #include "simdjson.h"
 using namespace simdjson;
